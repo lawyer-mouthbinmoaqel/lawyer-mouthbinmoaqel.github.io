@@ -1,12 +1,127 @@
-<!DOCTYPE html>
-<html lang="ar">
+
+<!doctype html>
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>lawyer-mouthbinmoaqel</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مكتب المحامي معاذ بن معيقل</title>
+  <meta name="description" content="موقع تعريفي لخدمات المحاماة والاستشارات القانونية في الرياض." />
+  <style>
+    :root{
+      --bg:#0b1220; --card:#101a2f; --text:#eef2ff; --muted:#b7c0d6;
+      --accent:#d1a954; --border:rgba(255,255,255,.12);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial;background:var(--bg);color:var(--text);line-height:1.9}
+    .container{max-width:980px;margin:0 auto;padding:22px}
+    header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    nav a{color:var(--muted);text-decoration:none;margin-inline:10px;font-weight:700}
+    nav a:hover{color:var(--text)}
+    .hero{margin-top:14px;border:1px solid var(--border);background:rgba(16,26,47,.7);border-radius:18px;padding:22px}
+    h1{margin:0 0 8px;font-size:26px}
+    .sub{margin:0;color:var(--muted)}
+    .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btn{padding:11px 14px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid var(--border);color:var(--text)}
+    .btn.primary{background:var(--accent);color:#1a1407;border:none}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+    .card{border:1px solid var(--border);background:rgba(16,26,47,.6);border-radius:16px;padding:16px}
+    .card h3{margin:0 0 6px;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .links a{color:var(--text)}
+    .map{width:100%;height:320px;border:0;border-radius:14px}
+    footer{margin-top:20px;padding-top:12px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+    @media (max-width:820px){.grid{grid-template-columns:1fr} nav{display:none}}
+  </style>
 </head>
-<body style="text-align:center; font-family:Tahoma;">
-  <h1>مرحباً بكم في موقع المحامي معاذ بن معيقل</h1>
-  <p>موقع تعريفي لخدمات المحاماة والاستشارات القانونية.</p>
-  <p>للتواصل: lawyer.m.moaqel@gmail.com</p>
+
+<body>
+<div class="container">
+
+  <header>
+    <strong>مكتب المحامي معاذ بن معيقل</strong>
+    <nav>
+      <a href="#services">الخدمات</a>
+      <a href="#contact">التواصل</a>
+      <a href="#location">الموقع</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>مرحبًا بكم</h1>
+    <p class="sub">
+      خدمات المحاماة والاستشارات القانونية<br>
+      📍 الرياض – حي السليمانية
+    </p>
+
+    <!-- بيانات من البروشور: الجوال + الإيميل + الحساب -->
+    <div class="btns">
+      <a class="btn primary" href="https://wa.me/966500334288" target="_blank" rel="noopener">واتساب مباشر</a>
+      <a class="btn" href="tel:+966500334288">اتصال</a>
+      <a class="btn" href="mailto:lawyer.m.moaqel@gmail.com">بريد إلكتروني</a>
+    </div>
+  </section>
+
+  <section id="services" class="grid">
+    <div class="card">
+      <h3>التقاضي والترافع</h3>
+      <p>تمثيل وترافع أمام الجهات القضائية واللجان المختصة.</p>
+    </div>
+    <div class="card">
+      <h3>الاستشارات القانونية</h3>
+      <p>استشارات حضورية وعن بُعد وفق احتياج العميل.</p>
+    </div>
+    <div class="card">
+      <h3>العقود والمعاملات</h3>
+      <p>صياغة ومراجعة العقود والمعاملات التجارية.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="card" style="margin-top:14px">
+    <h3>التواصل ومواقع التواصل</h3>
+    <div class="links" style="color:var(--muted)">
+      <p style="margin:0 0 10px">
+        📞 <a href="tel:+966500334288">+966 50 033 4288</a><br>
+        💬 <a href="https://wa.me/966500334288" target="_blank" rel="noopener">واتساب مباشر</a><br>
+        📧 <a href="mailto:lawyer.m.moaqel@gmail.com">lawyer.m.moaqel@gmail.com</a><br>
+        📍 الرياض – حي السليمانية
+      </p>
+
+      <p style="margin:0">
+        🌐 تيك توك:
+        <a href="https://www.tiktok.com/@lawyermuath" target="_blank" rel="noopener">@lawyermuath</a>
+        <br>
+        🌐 إنستغرام:
+        <a href="https://www.instagram.com/lawyermuath" target="_blank" rel="noopener">@lawyermuath</a>
+        <br>
+        🌐 إكس:
+        <a href="https://x.com/lawyermuath" target="_blank" rel="noopener">@lawyermuath</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="location" class="card" style="margin-top:14px">
+    <h3>موقع المكتب على الخريطة</h3>
+    <p style="margin:0 0 10px;color:var(--muted)">
+      (إذا عندك رابط Google Maps للمكتب أرسليه لي، وأضبط الخريطة على الموقع الدقيق بدل البحث العام)
+    </p>
+
+    <!-- Embed عبر بحث مباشر: الرياض حي السليمانية -->
+    <iframe
+      class="map"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps?q=%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%20%D8%AD%D9%8A%20%D8%A7%D9%84%D8%B3%D9%84%D9%8A%D9%85%D8%A7%D9%86%D9%8A%D8%A9&output=embed">
+    </iframe>
+  </section>
+
+  <footer>
+    © <span id="y"></span> مكتب المحامي معاذ بن معيقل — جميع الحقوق محفوظة
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
