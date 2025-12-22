@@ -1,144 +1,508 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>مكتب المحامي معاذ بن معيقل</title>
-  <meta name="description" content="مكتب محاماة واستشارات قانونية – الرياض حي السليمانية" />
+  <meta name="description" content="مكتب المحامي معاذ بن معيقل للمحاماة والاستشارات القانونية - الرياض" />
 
   <style>
     :root{
       --bg:#0b1220;
-      --card:#101a2f;
-      --text:#eef2ff;
-      --muted:#b7c0d6;
-      --accent:#d1a954;
-      --border:rgba(255,255,255,.12);
+      --pearl:#f6f2ea;
+      --ink:#0b1220;
+      --card:rgba(255,255,255,.86);
+      --glass:rgba(10,18,32,.55);
+      --line:rgba(255,255,255,.18);
+      --gold:#d4af37;
+      --gold2:#b8891b;
+      --muted:rgba(255,255,255,.78);
+      --muted2:rgba(11,18,32,.72);
+      --shadow:0 18px 50px rgba(0,0,0,.35);
+      --radius:18px;
     }
+
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family:Tahoma, Arial, sans-serif;
-      background:linear-gradient(180deg,#0b1220 0%, #0e1730 100%);
-      color:var(--text);
-      line-height:1.8;
+      font-family: "Tahoma", "Arial", sans-serif;
+      color:#fff;
+      background: var(--bg);
+      scroll-behavior:smooth;
     }
-    header{
-      padding:24px 16px;
-      border-bottom:1px solid var(--border);
-      background:#0b1220;
+
+    /* Top Nav */
+    .nav{
+      position:fixed;
+      inset:0 0 auto 0;
+      z-index:50;
+      display:flex;
+      justify-content:center;
+      padding:14px 14px 0;
+      pointer-events:none;
     }
-    .container{max-width:1100px;margin:auto}
-    nav a{
-      color:var(--text);
+    .nav .bar{
+      pointer-events:auto;
+      width:min(1100px, 94vw);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(10,18,32,.55);
+      backdrop-filter: blur(12px);
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    .brand{
+      display:flex; gap:10px; align-items:center;
+      font-weight:700;
+      letter-spacing:.2px;
+      color:#fff;
       text-decoration:none;
-      margin-left:16px;
+      white-space:nowrap;
     }
-    nav a:hover{color:var(--accent)}
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      box-shadow:0 0 0 3px rgba(212,175,55,.18);
+    }
+    .links{display:flex; gap:12px; flex-wrap:wrap}
+    .links a{
+      color:rgba(255,255,255,.86);
+      text-decoration:none;
+      font-size:14px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+    .links a:hover{border-color:rgba(212,175,55,.35); color:#fff}
+
+    /* Sections */
+    section{padding:92px 16px 70px}
+    .wrap{width:min(1100px, 94vw); margin:0 auto}
+
+    /* HERO */
     .hero{
-      padding:70px 16px;
-      text-align:center;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding-top:86px;
+      background:
+        radial-gradient(900px 500px at 70% 20%, rgba(212,175,55,.18), transparent 60%),
+        radial-gradient(700px 450px at 20% 30%, rgba(255,255,255,.08), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.65)),
+        url("lawyer.jpg"); /* ارفع صورتك للمستودع وسمّها lawyer.jpg */
+      background-size:cover;
+      background-position:center;
+      position:relative;
+      overflow:hidden;
     }
-    .hero h1{font-size:34px;margin-bottom:12px}
-    .hero p{color:var(--muted)}
+
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.25fr .95fr;
+      gap:22px;
+      align-items:center;
+    }
+
+    .glass{
+      background:rgba(10,18,32,.56);
+      border:1px solid rgba(255,255,255,.16);
+      backdrop-filter: blur(14px);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      padding:22px;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(26px, 3.3vw, 44px);
+      line-height:1.2;
+      font-weight:800;
+    }
+    .sub{
+      margin:0 0 16px;
+      color:rgba(255,255,255,.82);
+      font-size: clamp(14px, 1.5vw, 18px);
+      line-height:1.9;
+    }
+    .goldLine{
+      height:2px;
+      width:86px;
+      background:linear-gradient(90deg,var(--gold), transparent);
+      margin:14px 0 18px;
+      border-radius:99px;
+    }
+
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
     .btn{
-      display:inline-block;
-      margin-top:20px;
-      padding:12px 20px;
-      border-radius:10px;
-      background:linear-gradient(180deg,#e2c777,#caa24a);
-      color:#1b1b1b;
-      font-weight:bold;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid rgba(212,175,55,.35);
+      color:#111;
+      font-weight:800;
+      text-decoration:none;
+      background:linear-gradient(135deg, var(--gold), var(--gold2));
+      box-shadow: 0 14px 35px rgba(212,175,55,.15);
+    }
+    .btn:hover{filter:brightness(1.03)}
+    .btn2{
+      background:transparent;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.22);
+      font-weight:700;
+      padding:12px 16px;
+      border-radius:14px;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    /* Portrait box (يمين) */
+    .portrait{
+      border-radius:var(--radius);
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.16);
+      box-shadow: var(--shadow);
+      background:rgba(10,18,32,.35);
+    }
+    .portrait img{
+      width:100%;
+      height:520px;
+      object-fit:cover;
+      display:block;
+      filter: contrast(1.03) saturate(1.02);
+    }
+    .caption{
+      padding:12px 14px;
+      font-size:13px;
+      color:rgba(255,255,255,.76);
+      border-top:1px solid rgba(255,255,255,.12);
+      background:rgba(10,18,32,.55);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Pearl pages background */
+    .pearl{
+      color: var(--ink);
+      background:
+        radial-gradient(900px 520px at 70% 10%, rgba(212,175,55,.14), transparent 55%),
+        radial-gradient(700px 420px at 25% 20%, rgba(11,18,32,.08), transparent 60%),
+        linear-gradient(180deg, var(--pearl), #ffffff);
+      position:relative;
+    }
+    .pearl::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        url("scales.png"); /* ارفع صورة ميزان وسمّها scales.png (اختياري) */
+      background-repeat:no-repeat;
+      background-position: 12% 30%;
+      background-size: min(520px, 55vw);
+      opacity:.18;
+      pointer-events:none;
+      filter: contrast(1.05) saturate(1.02);
+    }
+
+    .card{
+      position:relative;
+      background: var(--card);
+      border: 1px solid rgba(11,18,32,.10);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 14px 40px rgba(11,18,32,.12);
+    }
+
+    h2{
+      margin:0 0 10px;
+      font-size: clamp(20px, 2.4vw, 30px);
+      font-weight:900;
+    }
+    .muted{color: var(--muted2); line-height:2; margin:0}
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+      margin-top:16px;
+    }
+    .list{
+      margin:10px 0 0;
+      padding:0 18px 0 0;
+      line-height:2;
+      color: var(--muted2);
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(11,18,32,.12);
+      background:rgba(255,255,255,.7);
+      margin:8px 8px 0 0;
+      font-weight:700;
+      color: var(--ink);
       text-decoration:none;
     }
-    section{padding:40px 16px}
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:20px;
-      margin-bottom:16px;
-    }
-    footer{
-      border-top:1px solid var(--border);
-      padding:20px;
-      text-align:center;
-      color:var(--muted);
-    }
-    .whatsapp{
+    .pill i{font-style:normal; color:var(--gold2)}
+
+    /* Floating WhatsApp */
+    .waFloat{
       position:fixed;
       left:16px;
       bottom:16px;
-      background:#25D366;
+      z-index:60;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:999px;
+      background:#1fb15b;
       color:#fff;
-      padding:14px 16px;
-      border-radius:50px;
       text-decoration:none;
-      font-weight:bold;
+      font-weight:800;
+      box-shadow:0 16px 40px rgba(0,0,0,.28);
+    }
+
+    /* Footer */
+    footer{
+      padding:26px 16px;
+      background:rgba(10,18,32,.92);
+      color:rgba(255,255,255,.7);
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,.10);
+    }
+
+    @media (max-width: 900px){
+      .heroGrid{grid-template-columns:1fr}
+      .portrait img{height:420px}
+      .grid2{grid-template-columns:1fr}
     }
   </style>
 </head>
 
 <body>
-
-<header>
-  <div class="container">
-    <strong>مكتب المحامي معاذ بن معيقل</strong>
-    <nav>
-      <a href="#services">خدماتنا</a>
-      <a href="#about">من نحن</a>
-      <a href="#contact">التواصل</a>
-    </nav>
+  <div class="nav">
+    <div class="bar">
+      <a class="brand" href="#top"><span class="dot"></span> مكتب المحامي معاذ بن معيقل</a>
+      <div class="links">
+        <a href="#about">نبذة</a>
+        <a href="#services">خدماتنا</a>
+        <a href="#other">خدمات أخرى</a>
+        <a href="#achievements">إنجازات</a>
+        <a href="#contact">التواصل</a>
+      </div>
+    </div>
   </div>
-</header>
 
-<div class="hero">
-  <h1>خبرة قانونية باحترافية عالية</h1>
-  <p>محاماة واستشارات قانونية وفق أنظمة المملكة العربية السعودية</p>
-  <a class="btn" href="https://wa.me/966500334288" target="_blank">
-    اطلب استشارة عبر واتساب
-  </a>
-</div>
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="heroGrid">
+        <div class="glass">
+          <h1>مكتب المحامي معاذ بن معيقل</h1>
+          <div class="goldLine"></div>
+          <p class="sub">للمحاماة والاستشارات القانونية</p>
 
-<section id="services" class="container">
-  <div class="card">
-    <h3 style="color:var(--accent)">الاستشارات القانونية</h3>
-    <p>تقديم الرأي القانوني المبني على الأنظمة واللوائح السعودية.</p>
-  </div>
-  <div class="card">
-    <h3 style="color:var(--accent)">التقاضي والتمثيل</h3>
-    <p>التمثيل أمام المحاكم والجهات القضائية المختلفة.</p>
-  </div>
-  <div class="card">
-    <h3 style="color:var(--accent)">صياغة العقود</h3>
-    <p>إعداد ومراجعة العقود التجارية والمدنية باحتراف.</p>
-  </div>
-</section>
+          <div class="ctaRow">
+            <!-- عدّل رقم الواتساب هنا -->
+            <a class="btn" href="https://wa.me/9665XXXXXXXX?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%2C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B7%D9%84%D8%A8%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%82%D8%A7%D9%86%D9%88%D9%86%D9%8A%D8%A9" target="_blank" rel="noopener">
+              استشارة قانونية
+            </a>
+            <a class="btn2" href="#services">استعراض الخدمات</a>
+          </div>
 
-<section id="about" class="container">
-  <h2 style="color:var(--accent)">من نحن</h2>
-  <p>
-    مكتب محاماة مقره <strong>الرياض – حي السليمانية</strong>،
-    نعمل على حماية حقوق عملائنا وتقديم حلول قانونية دقيقة.
-  </p>
-</section>
+          <p class="sub" style="margin-top:14px">
+            الرياض — حي السليمانية
+          </p>
+        </div>
 
-<section id="contact" class="container">
-  <h2 style="color:var(--accent)">التواصل</h2>
-  <p>
-    📍 الرياض – حي السليمانية<br>
-    📞 <a href="tel:+966500334288" style="color:var(--accent)">+966 50 033 4288</a><br>
-    ✉️ <a href="mailto:lawyer.m.moaqel@gmail.com" style="color:var(--accent)">lawyer.m.moaqel@gmail.com</a>
-  </p>
-</section>
+        <div class="portrait">
+          <!-- ارفع نفس الصورة للمستودع باسم lawyer.jpg + لو تبغى صورة جانبية “بدون خلفية” لازم تكون PNG شفافة -->
+          <img src="lawyer.jpg" alt="صورة المحامي" />
+          <div class="caption">
+            يمكنك لاحقًا استبدال الصورة بنسخة PNG بدون خلفية للحصول على شكل “قصّة” فخم على الجانب.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  © جميع الحقوق محفوظة – مكتب المحامي معاذ بن معيقل
-</footer>
+  <!-- ABOUT -->
+  <section class="pearl" id="about">
+    <div class="wrap">
+      <div class="card">
+        <h2>نبذة عنا</h2>
+        <p class="muted">
+          تأسس مكتب المحامي معاذ بن معيقل في مدينة الرياض عام 2006، ويُعد من المكاتب الرائدة في المملكة العربية السعودية في تقديم
+          خدمات المحاماة والاستشارات القانونية، مع التركيز على الجودة والاحترافية وسرعة إنجاز الأعمال.
+        </p>
 
-<a class="whatsapp" href="https://wa.me/966500334288" target="_blank">
-  واتساب
-</a>
+        <div class="grid2">
+          <div>
+            <h3 style="margin:14px 0 8px">معلومات سريعة</h3>
+            <ul class="list">
+              <li>المدينة: الرياض</li>
+              <li>الموقع: حي السليمانية</li>
+              <li>نطاق الخدمات: محاماة — استشارات — شركات — عقود — ملكية فكرية — تحكيم</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="margin:14px 0 8px">قنوات التواصل</h3>
+            <div>
+              <a class="pill" href="mailto:lawyer.m.moaqel@gmail.com"><i>✉</i> البريد</a>
+              <!-- عدّل رقم الجوال هنا -->
+              <a class="pill" href="tel:+9665XXXXXXXX"><i>☎</i> اتصال</a>
+              <a class="pill" href="https://solo.to/lawyer_ksa2030" target="_blank" rel="noopener"><i>🔗</i> روابط التواصل</a>
+            </div>
+          </div>
+        </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="pearl" id="services">
+    <div class="wrap">
+      <div class="card">
+        <h2>خدماتنا</h2>
+        <p class="muted">الخدمات الأساسية المذكورة في البروشور:</p>
+
+        <div class="grid2">
+          <div>
+            <h3 style="margin:14px 0 8px">التقاضي والترافع</h3>
+            <ul class="list">
+              <li>الترافع أمام جميع المحاكم واللجان القضائية.</li>
+              <li>إعداد صحائف الدعاوى والمذكرات واللوائح الاعتراضية.</li>
+              <li>متابعة القضايا وإدارة إجراءاتها باحترافية.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style="margin:14px 0 8px">الاستشارات القانونية</h3>
+            <ul class="list">
+              <li>تقديم الاستشارات للأفراد والمنشآت والشركات.</li>
+              <li>مراجعة الموقف القانوني وتقديم الرأي النظامي.</li>
+              <li>حلول عملية وفق الأنظمة واللوائح.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style="margin:14px 0 8px">خدمات الشركات والأعمال التجارية</h3>
+            <ul class="list">
+              <li>تأسيس جميع أنواع الشركات ومتابعة إجراءاتها.</li>
+              <li>صياغة ومراجعة محاضر وقرارات الشركاء/المساهمين.</li>
+              <li>التصفية وإجراءاتها القانونية.</li>
+              <li>تمثيل الشركات في صفقات الاندماج والاستحواذ.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style="margin:14px 0 8px">الملكية الفكرية</h3>
+            <ul class="list">
+              <li>تسجيل العلامات التجارية والأسماء التجارية.</li>
+              <li>حماية الحقوق والاعتراضات والمتابعة.</li>
+              <li>تسجيل نماذج صناعية وحقوق ذات صلة.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style="margin:14px 0 8px">العقود والمعاملات التجارية</h3>
+            <ul class="list">
+              <li>صياغة ومراجعة العقود المحلية والدولية.</li>
+              <li>التأكد من سلامة البنود وحماية المصالح.</li>
+              <li>إدارة المخاطر القانونية التعاقدية.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER SERVICES -->
+  <section class="pearl" id="other">
+    <div class="wrap">
+      <div class="card">
+        <h2>الخدمات الأخرى</h2>
+        <p class="muted">خدمات إضافية واردة في البروشور:</p>
+        <ul class="list">
+          <li>التحكيم والوساطة (Arbitration & Mediation).</li>
+          <li>التوثيق (Notarization).</li>
+          <li>التدريب والتطوير (Training & Developments).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="pearl" id="achievements">
+    <div class="wrap">
+      <div class="card">
+        <h2>لمحة عن الإنجازات</h2>
+        <p class="muted">أرقام وإحصاءات مذكورة في البروشور:</p>
+        <div class="grid2">
+          <div>
+            <ul class="list">
+              <li>أكثر من 700 قضية.</li>
+              <li>أكثر من 3500 متابعة قضية.</li>
+              <li>قرابة 5000 اجتماع أعمال.</li>
+            </ul>
+          </div>
+          <div>
+            <ul class="list">
+              <li>شبكة تعاون دولية واسعة (أكثر من 360 مكتبًا حول العالم) ضمن خدمات الملكية الفكرية.</li>
+              <li>خبرة ممتدة في قطاع الأعمال والشركات والعقود.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="pearl" id="contact">
+    <div class="wrap">
+      <div class="card">
+        <h2>التواصل</h2>
+        <p class="muted">اختر طريقة التواصل المناسبة:</p>
+
+        <div style="margin-top:10px">
+          <!-- عدّل رقم الواتساب + الجوال هنا -->
+          <a class="pill" href="https://wa.me/9665XXXXXXXX" target="_blank" rel="noopener"><i>💬</i> واتساب</a>
+          <a class="pill" href="tel:+9665XXXXXXXX"><i>☎</i> اتصال</a>
+          <a class="pill" href="mailto:lawyer.m.moaqel@gmail.com"><i>✉</i> بريد إلكتروني</a>
+
+          <!-- روابط السوشال: إذا تبغى تربطها مباشرة، عدّل الروابط -->
+          <a class="pill" href="https://solo.to/lawyer_ksa2030" target="_blank" rel="noopener"><i>🎬</i> TikTok / روابط</a>
+          <a class="pill" href="https://solo.to/lawyer_ksa2030" target="_blank" rel="noopener"><i>📷</i> Instagram</a>
+          <a class="pill" href="https://x.com/lawyermuath" target="_blank" rel="noopener"><i>𝕏</i> X</a>
+        </div>
+
+        <h3 style="margin:18px 0 8px">العنوان</h3>
+        <p class="muted" style="margin:0">الرياض — حي السليمانية</p>
+        <p class="muted" style="margin:8px 0 0">
+          <a href="https://www.google.com/maps?q=%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6+%D8%AD%D9%8A+%D8%A7%D9%84%D8%B3%D9%84%D9%8A%D9%85%D8%A7%D9%86%D9%8A%D8%A9" target="_blank" rel="noopener" style="color:#0b1220;font-weight:800">
+            فتح الموقع على الخرائط
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <a class="waFloat" href="https://wa.me/9665XXXXXXXX" target="_blank" rel="noopener">واتساب</a>
+
+  <footer>
+    جميع الحقوق محفوظة © مكتب المحامي معاذ بن معيقل
+  </footer>
 </body>
 </html>
