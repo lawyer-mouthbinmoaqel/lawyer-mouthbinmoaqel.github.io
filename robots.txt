@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lawyer-mouthbinmoaqel.github.io/sitemap.xml
