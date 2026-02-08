@@ -31,9 +31,51 @@
   <!-- محتوى الموقع -->
   <main class="wavy-bg">
     <section id="services" class="section">
-      <h2 class="title">خدماتنا</h2>
-    </section>
-  </main>
+  <h2 class="title">خدماتنا</h2>
+
+  <div class="cards">
+    <button class="card" type="button" onclick="showService('litigation')">
+      <i class="fa-solid fa-scale-balanced"></i>
+      <span>التقاضي والترافع</span>
+    </button>
+
+    <button class="card" type="button" onclick="showService('advisory')">
+      <i class="fa-solid fa-comments"></i>
+      <span>الاستشارات القانونية</span>
+    </button>
+
+    <button class="card" type="button" onclick="showService('companies')">
+      <i class="fa-solid fa-building-columns"></i>
+      <span>الشركات والخدمات التجارية</span>
+    </button>
+
+    <button class="card" type="button" onclick="showService('ip')">
+      <i class="fa-solid fa-lightbulb"></i>
+      <span>الملكية الفكرية</span>
+    </button>
+
+    <button class="card" type="button" onclick="showService('contracts')">
+      <i class="fa-solid fa-file-contract"></i>
+      <span>العقود والصفقات التجارية</span>
+    </button>
+
+    <button class="card" type="button" onclick="showService('arbitration')">
+      <i class="fa-solid fa-handshake"></i>
+      <span>التحكيم والوساطة</span>
+    </button>
+
+    <button class="card" type="button" onclick="showService('notary')">
+      <i class="fa-solid fa-stamp"></i>
+      <span>التوثيق</span>
+    </button>
+
+    <button class="card" type="button" onclick="showService('training')">
+      <i class="fa-solid fa-chalkboard-user"></i>
+      <span>التدريب والتطوير</span>
+    </button>
+  </div>
+</section>
+
 
   <!-- ربط الجافاسكربت -->
   <script src="script.js"></script>
