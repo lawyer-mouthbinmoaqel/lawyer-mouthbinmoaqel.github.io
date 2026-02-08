@@ -40,7 +40,7 @@ body{
 .hero-cta{
   position: absolute;
   top: 77%;
-  left: 50%;
+  left: 10%;
   transform: translate(-50%, -50%);
 
   width: min(520px, 62vw);
