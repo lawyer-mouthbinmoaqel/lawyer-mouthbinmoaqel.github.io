@@ -39,8 +39,8 @@ body{
 /* زر حجز الاستشارة داخل الصورة */
 .hero-cta{
   position: absolute;
-  top: 70%;
-  left: 66%;
+  top: 77%;
+  left: 50%;
   transform: translate(-50%, -50%);
 
   width: min(520px, 62vw);
