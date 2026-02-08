@@ -39,7 +39,7 @@ body{
 /* زر حجز الاستشارة داخل الصورة */
 .hero-cta{
   position: absolute;
-  top: 66%;
+  top: 70%;
   left: 66%;
   transform: translate(-50%, -50%);
 
