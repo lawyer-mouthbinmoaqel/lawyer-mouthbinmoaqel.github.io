@@ -267,23 +267,22 @@ a.contact-btn i{
     --section-pad-x: 14px;
   }
 
-  /* زر الهيرو: خليه أسفل بالمنتصف بدل نسب ثابتة */
+   .hero-image{
+    background-image: url("hero-mobile.png");
+    background-size: cover;
+    background-position: top center;
+  }
+
   .hero-cta{
     left: 50%;
-    top: auto;
     bottom: calc(18px + env(safe-area-inset-bottom));
     transform: translateX(-50%);
-
     width: min(92vw, 420px);
     height: 54px;
     line-height: 54px;
     font-size: 16px;
   }
-
-  .hero-cta:hover{
-    transform: translateX(-50%) translateY(-2px);
-  }
-
+}
   .title{
     margin-bottom: 18px;
   }
