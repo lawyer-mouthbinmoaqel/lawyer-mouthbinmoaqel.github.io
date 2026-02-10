@@ -15,13 +15,11 @@
   --brown: #1a120d;
   --brown2:#120c08;
 
-  /* مقاسات عامة */
   --container: 1100px;
   --radius-lg: 18px;
   --shadow-lg: 0 14px 28px rgba(0,0,0,.6);
   --shadow-cta: 0 12px 28px rgba(0,0,0,.6);
 
-  /* مسافات */
   --section-pad-y: 64px;
   --section-pad-x: 16px;
 }
@@ -41,14 +39,10 @@ body{
   overflow-x: hidden;
 }
 
-/* روابط عامة */
-a{
-  color: inherit;
-}
+a{ color: inherit; text-decoration: none; }
 
-/* ================= الهيرو ================= */
+/* ================= HERO (كمبيوتر) ================= */
 .hero-image{
-  /* حل مشاكل 100vh على الجوال (خصوصًا iOS) */
   min-height: 100vh;
   min-height: 100svh;
   min-height: 100dvh;
@@ -63,7 +57,7 @@ a{
   overflow: hidden;
 }
 
-/* طبقة تظليل خفيفة لتحسين القراءة (اختياري لكنه مفيد للجوال) */
+/* تظليل */
 .hero-image::after{
   content:"";
   position:absolute;
@@ -79,7 +73,6 @@ a{
   position: absolute;
   z-index: 2;
 
-  /* الافتراضي للكمبيوتر: نفس فكرتك لكن أكثر مرونة */
   top: 77%;
   left: 69%;
   transform: translate(-50%, -50%);
@@ -88,61 +81,29 @@ a{
   height: 52px;
   line-height: 52px;
 
-  padding: 0 18px;
   background: linear-gradient(135deg, var(--gold), var(--gold2));
   color: var(--black);
   text-align: center;
+  font-weight: 800;
 
   border-radius: 999px;
-  font-weight: 800;
-  letter-spacing: .2px;
-  text-decoration: none;
-
   box-shadow: var(--shadow-cta);
-  transition: transform .25s, box-shadow .25s, filter .25s;
+  transition: transform .25s, box-shadow .25s;
   -webkit-tap-highlight-color: transparent;
 }
 
 .hero-cta:hover{
   transform: translate(-50%, -54%);
-  box-shadow: 0 18px 36px rgba(0,0,0,.75);
 }
 
 /* ================= الخلفية ================= */
 .wavy-bg{
-  position: relative;
-  overflow: hidden;
   background: linear-gradient(180deg, var(--black), var(--brown2), var(--brown));
-}
-
-.wavy-bg::before,
-.wavy-bg::after{
-  content:"";
-  position:absolute;
-  inset:-30%;
-  pointer-events:none;
-}
-
-.wavy-bg::before{
-  background:
-    radial-gradient(60% 40% at 20% 30%, rgba(0,0,0,.85), transparent 60%),
-    radial-gradient(60% 40% at 80% 40%, rgba(0,0,0,.75), transparent 62%);
-  filter: blur(20px);
-}
-
-.wavy-bg::after{
-  background:
-    radial-gradient(50% 35% at 25% 35%, rgba(212,175,55,.18), transparent 60%),
-    radial-gradient(50% 35% at 75% 75%, rgba(212,175,55,.12), transparent 60%);
-  filter: blur(14px);
 }
 
 /* ================= المحتوى ================= */
 .section{
-  position: relative;
-  z-index: 1;
   padding: var(--section-pad-y) var(--section-pad-x);
-
   width: min(var(--container), 92vw);
   margin: 0 auto;
 }
@@ -150,14 +111,50 @@ a{
 .title{
   font-family: "AmoshrefThulth", serif;
   font-size: clamp(28px, 3.4vw, 44px);
-  margin: 0 0 28px;
-  line-height: 1.2;
+  margin: 0 0 18px;
 }
 
 p{
-  margin: 0 0 14px;
   line-height: 1.9;
+}
+
+/* ================= القائمة المنسدلة للخدمات ================= */
+.service-dropdown{
+  margin: 14px 0 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(212,175,55,.35);
+  background: rgba(0,0,0,.55);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.service-dropdown.hidden{
+  display: none;
+}
+
+.service-dropdown__inner{
+  padding: 18px 18px;
+}
+
+.service-dropdown__title{
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--gold);
+}
+
+.service-dropdown__content{
   color: rgba(212,175,55,.92);
+  line-height: 1.9;
+}
+
+.service-dropdown__content ul{
+  margin: 0;
+  padding: 0 18px 0 0;
+}
+
+.service-dropdown__content li{
+  margin: 8px 0;
 }
 
 /* ================= البطاقات ================= */
@@ -173,94 +170,56 @@ p{
 
   display:flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
 
-  padding: 22px;
+  padding:22px;
   border-radius: var(--radius-lg);
-
   background: rgba(0,0,0,.55);
-  border: 1px solid rgba(212,175,55,.35);
+  border:1px solid rgba(212,175,55,.35);
   box-shadow: var(--shadow-lg);
-
-  transition: transform .25s, border-color .25s, background .25s;
+  transition: transform .2s, border-color .2s, background .2s;
   -webkit-tap-highlight-color: transparent;
 }
 
 .card:hover{
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   border-color: rgba(212,175,55,.6);
 }
 
-.card i{ font-size: 34px; }
+.card i{ font-size: 34px; color: var(--gold); }
 .card span{ font-size: 18px; font-weight: 800; }
 
-/* ================= أزرار التواصل (السفلية) ================= */
+/* ================= أزرار التواصل ================= */
 .contact-buttons{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  margin-top: 40px;
-  flex-wrap: wrap;
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-top: 30px;
 }
 
 a.contact-btn{
   display:flex;
   align-items:center;
   justify-content:center;
-  gap: 10px;
+  gap:10px;
 
-  padding: 14px 20px;
-  min-width: 140px;
-  border-radius: 14px;
-
+  padding:14px 20px;
+  border-radius:14px;
   background: rgba(0,0,0,.35);
-  border: 1px solid rgba(212,175,55,.45);
+  border:1px solid rgba(212,175,55,.45);
 
-  color: #d4af37 !important;
-  text-decoration: none !important;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,.35);
-  transition: transform .15s, border-color .15s, background .15s;
-  -webkit-tap-highlight-color: transparent;
-}
-
-a.contact-btn:hover{
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,.7);
-  background: rgba(0,0,0,.45);
-}
-
-/* منع اللون الأزرق نهائياً */
-a.contact-btn,
-a.contact-btn:visited,
-a.contact-btn:active,
-a.contact-btn:hover{
-  color: #d4af37 !important;
-  text-decoration: none !important;
+  color: var(--gold) !important;
+  text-decoration:none !important;
 }
 
 a.contact-btn i{
-  font-size: 18px;
-  color: #d4af37 !important;
+  color: var(--gold) !important;
 }
 
-/* ================= تحسينات للجوال ================= */
-
-/* 1) تابلت وتحت */
-@media (max-width: 992px){
-  :root{
-    --section-pad-y: 52px;
-  }
-
-  .cards{
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-}
-
-/* ====== الجوال ====== */
+/* ================= الجوال ================= */
 @media (max-width: 600px){
 
   :root{
@@ -268,31 +227,29 @@ a.contact-btn i{
     --section-pad-x: 14px;
   }
 
+  /* صورة الجوال فقط */
   .hero-image{
-    background-image: url("hero-mobile.png?v=3");
+    background-image: url("hero-mobile.png");
     background-size: cover;
     background-position: top center;
+    background-repeat: no-repeat;
   }
 
+  /* زر الجوال */
   .hero-cta{
     left: 50%;
-    bottom: calc(18px + env(safe-area-inset-bottom));
+    bottom: 22%;
+    top: auto;
     transform: translateX(-50%);
-    width: min(92vw, 420px);
-    height: 54px;
-    line-height: 54px;
-    font-size: 16px;
-  }
 
-}
+    width: auto;
+    min-width: 160px;
+    height: auto;
+    line-height: normal;
+    padding: 10px 22px;
 
-  .title{
-    margin-bottom: 18px;
-  }
-
-  p{
-    font-size: 15px;
-    line-height: 1.85;
+    font-size: 14px;
+    border-radius: 14px;
   }
 
   .cards{
@@ -300,54 +257,7 @@ a.contact-btn i{
     gap: 12px;
   }
 
-  .card{
-    padding: 18px;
-    border-radius: 16px;
-  }
-
-  .contact-buttons{
-    gap: 12px;
-    margin-top: 28px;
-  }
-
-  a.contact-btn{
-    width: 100%;
-    max-width: 520px;
-    min-width: 0;
-  }
-}
-
-/* 3) أجهزة صغيرة جدًا */
-@media (max-width: 360px){
-  .hero-cta{
-    height: 52px;
-    line-height: 52px;
-    font-size: 15px;
-  }
-}
-/* ================= HERO للجوال ================= */
-@media (max-width: 600px){
-
-  .hero-image{
-background-image: url("hero-mobile.png");
-    background-size: cover;
-    background-position: top center;
-  }
-
-  .hero-cta{
-    position: absolute;
-    bottom: 22%;
-    left: 50%;
-    transform: translateX(-50%);
-
-    width: auto;
-    min-width: 160px;
-    padding: 10px 22px;
-
-    font-size: 14px;
-    font-weight: 700;
-
-    border-radius: 14px;
-    box-shadow: 0 8px 20px rgba(0,0,0,.45);
+  .service-dropdown__inner{
+    padding: 14px;
   }
 }
