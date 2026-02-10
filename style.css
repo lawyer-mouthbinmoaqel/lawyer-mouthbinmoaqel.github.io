@@ -327,7 +327,7 @@ a.contact-btn i{
 @media (max-width: 600px){
 
   .hero-image{
-    background-image: url("assets/images/hero-mobile.png");
+background-image: url("hero-mobile.png");
     background-size: cover;
     background-position: top center;
   }
