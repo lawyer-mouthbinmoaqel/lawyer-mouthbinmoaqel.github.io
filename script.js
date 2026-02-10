@@ -1,5 +1,6 @@
-function showService(key) {
-  const services = {
+document.addEventListener("DOMContentLoaded", () => {
+
+  const servicesData = {
     litigation: {
       title: "التقاضي والترافع",
       points: [
@@ -59,28 +60,48 @@ function showService(key) {
     training: {
       title: "التدريب والتطوير",
       points: [
-        "برامج تدريب قانوني.",
-        "رفع الوعي بالأنظمة.",
-        "ورش عمل متخصصة."
+        "برامج تدريب قانوني متخصصة.",
+        "رفع الوعي بالأنظمة والتشريعات.",
+        "ورش عمل قانونية احترافية."
       ]
     }
   };
 
-  const s = services[key];
-  if (!s) return;
+  const dropdown = document.getElementById("service-dropdown");
+  const titleEl = document.getElementById("service-title");
+  const contentEl = document.getElementById("service-content");
+  const cards = document.querySelectorAll(".card");
 
-  document.getElementById("services").style.display = "none";
-  document.getElementById("service-details").classList.remove("hidden");
+  let currentService = null;
 
-  document.getElementById("service-content").innerHTML = `
-    <h3>${s.title}</h3>
-    <ul>
-      ${s.points.map(p => `<li>${p}</li>`).join("")}
-    </ul>
-  `;
-}
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      const key = card.getAttribute("data-service");
+      const service = servicesData[key];
+      if (!service) return;
 
-function hideService() {
-  document.getElementById("service-details").classList.add("hidden");
-  document.getElementById("services").style.display = "block";
-}
+      // إذا ضغط نفس الخدمة → إغلاق
+      if (currentService === key) {
+        dropdown.classList.add("hidden");
+        currentService = null;
+        return;
+      }
+
+      // عرض الخدمة الجديدة
+      currentService = key;
+
+      titleEl.textContent = service.title;
+      contentEl.innerHTML = `
+        <ul>
+          ${service.points.map(point => `<li>${point}</li>`).join("")}
+        </ul>
+      `;
+
+      dropdown.classList.remove("hidden");
+
+      // سحب ناعم للقائمة
+      dropdown.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+});
