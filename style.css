@@ -260,15 +260,16 @@ a.contact-btn i{
   }
 }
 
-/* 2) جوال */
+/* ====== الجوال ====== */
 @media (max-width: 600px){
+
   :root{
     --section-pad-y: 44px;
     --section-pad-x: 14px;
   }
 
-   .hero-image{
-    background-image: url("hero-mobile.png");
+  .hero-image{
+    background-image: url("hero-mobile.png?v=3");
     background-size: cover;
     background-position: top center;
   }
@@ -282,7 +283,9 @@ a.contact-btn i{
     line-height: 54px;
     font-size: 16px;
   }
+
 }
+
   .title{
     margin-bottom: 18px;
   }
