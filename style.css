@@ -39,7 +39,7 @@ body{
   overflow-x: hidden;
 }
 
-a{ color: inherit; text-decoration: none; }
+a{ color: inherit; text-decoration:none; }
 
 /* ================= HERO (كمبيوتر) ================= */
 .hero-image{
@@ -55,6 +55,7 @@ a{ color: inherit; text-decoration: none; }
 
   position: relative;
   overflow: hidden;
+  background-color: var(--black);
 }
 
 /* تظليل */
@@ -89,7 +90,6 @@ a{ color: inherit; text-decoration: none; }
   border-radius: 999px;
   box-shadow: var(--shadow-cta);
   transition: transform .25s, box-shadow .25s;
-  -webkit-tap-highlight-color: transparent;
 }
 
 .hero-cta:hover{
@@ -111,50 +111,11 @@ a{ color: inherit; text-decoration: none; }
 .title{
   font-family: "AmoshrefThulth", serif;
   font-size: clamp(28px, 3.4vw, 44px);
-  margin: 0 0 18px;
+  margin-bottom: 28px;
 }
 
 p{
   line-height: 1.9;
-}
-
-/* ================= القائمة المنسدلة للخدمات ================= */
-.service-dropdown{
-  margin: 14px 0 20px;
-  border-radius: 18px;
-  border: 1px solid rgba(212,175,55,.35);
-  background: rgba(0,0,0,.55);
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-}
-
-.service-dropdown.hidden{
-  display: none;
-}
-
-.service-dropdown__inner{
-  padding: 18px 18px;
-}
-
-.service-dropdown__title{
-  margin: 0 0 10px;
-  font-size: 18px;
-  font-weight: 900;
-  color: var(--gold);
-}
-
-.service-dropdown__content{
-  color: rgba(212,175,55,.92);
-  line-height: 1.9;
-}
-
-.service-dropdown__content ul{
-  margin: 0;
-  padding: 0 18px 0 0;
-}
-
-.service-dropdown__content li{
-  margin: 8px 0;
 }
 
 /* ================= البطاقات ================= */
@@ -179,16 +140,9 @@ p{
   background: rgba(0,0,0,.55);
   border:1px solid rgba(212,175,55,.35);
   box-shadow: var(--shadow-lg);
-  transition: transform .2s, border-color .2s, background .2s;
-  -webkit-tap-highlight-color: transparent;
 }
 
-.card:hover{
-  transform: translateY(-4px);
-  border-color: rgba(212,175,55,.6);
-}
-
-.card i{ font-size: 34px; color: var(--gold); }
+.card i{ font-size: 34px; }
 .card span{ font-size: 18px; font-weight: 800; }
 
 /* ================= أزرار التواصل ================= */
@@ -197,29 +151,25 @@ p{
   justify-content:center;
   gap:16px;
   flex-wrap:wrap;
-  margin-top: 30px;
+  margin-top:40px;
 }
 
 a.contact-btn{
   display:flex;
   align-items:center;
-  justify-content:center;
   gap:10px;
 
   padding:14px 20px;
   border-radius:14px;
+
   background: rgba(0,0,0,.35);
   border:1px solid rgba(212,175,55,.45);
+  color: var(--gold);
 
-  color: var(--gold) !important;
-  text-decoration:none !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,.35);
 }
 
-a.contact-btn i{
-  color: var(--gold) !important;
-}
-
-/* ================= الجوال ================= */
+/* ================= الجوال (الحل النهائي للصورة) ================= */
 @media (max-width: 600px){
 
   :root{
@@ -227,12 +177,16 @@ a.contact-btn i{
     --section-pad-x: 14px;
   }
 
-  /* صورة الجوال فقط */
+  /* صورة الجوال بدون قص */
   .hero-image{
     background-image: url("hero-mobile.png");
-    background-size: cover;
-    background-position: top center;
     background-repeat: no-repeat;
+    background-size: contain;        /* الحل */
+    background-position: center;
+    background-color: #0b0b0b;
+
+    min-height: 100svh;
+    min-height: 100dvh;
   }
 
   /* زر الجوال */
@@ -255,9 +209,5 @@ a.contact-btn i{
   .cards{
     grid-template-columns: 1fr;
     gap: 12px;
-  }
-
-  .service-dropdown__inner{
-    padding: 14px;
   }
 }
