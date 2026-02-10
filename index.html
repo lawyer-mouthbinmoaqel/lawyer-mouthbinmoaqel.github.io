@@ -2,7 +2,12 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8">
+
+  <!-- مهم جداً للجوال -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <meta name="google-site-verification" content="Ep-J70RTfIAIHtmQVfut1vNYbmmNa10KncHGc8u4Wbs" />
+
   <title>مكتب المحامي معاذ بن معيقل | محامي في الرياض</title>
 
   <meta name="description" content="مكتب المحامي معاذ بن معيقل للمحاماة والاستشارات القانونية في الرياض. خدمات قانونية، تمثيل أمام المحاكم، قضايا، واستشارات قانونية.">
@@ -10,10 +15,10 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://lawyer-mouthbinmoaqel.github.io/">
 
-  <!-- ربط ملف الستايل -->
+  <!-- ستايل -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- خط النص العادي -->
+  <!-- الخط -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
@@ -21,28 +26,21 @@
   <!-- أيقونات -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- هنا الصقي كود Schema -->
+  <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "name": "مكتب المحامي معاذ بن عبدالرحمن بن معيقل للمحاماه والاستشارات القانونية",
+    "name": "مكتب المحامي معاذ بن عبدالرحمن بن معيقل",
     "url": "https://lawyer-mouthbinmoaqel.github.io/",
-    "description": "مكتب محاماة واستشارات قانونية في الرياض، المملكة العربية السعودية.",
     "areaServed": {
       "@type": "City",
       "name": "الرياض"
     },
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "SA",
-      "addressLocality": "الرياض",
-      "addressRegion": "Riyadh Region"
-    },
     "sameAs": [
-      "https://x.com/lawyermuath?s=21&t=4JL6PS_RyA-Ks-o84pA5TA",
-      "https://maps.app.goo.gl/7DCLF6yoGTXfVZmJ9?g_st=ipc",
-      "https://tiktok.com/@lawyer_ksa?_t=ZS-8z45ZOHwWs1&_r=1",
+      "https://x.com/lawyermuath",
+      "https://maps.app.goo.gl/7DCLF6yoGTXfVZmJ9",
+      "https://www.tiktok.com/@lawyer_ksa",
       "https://t.snapchat.com/1WSL6xtu",
       "https://iwtsp.com/966540486184"
     ]
@@ -51,13 +49,15 @@
 </head>
 
 <body>
+
+  <!-- العنوان النصي لمحركات البحث -->
   <h1>المحامي معاذ بن عبدالرحمن بن معيقل</h1>
   <p>
     مكتب المحامي معاذ بن عبدالرحمن بن معيقل للمحاماة والاستشارات القانونية
     في الرياض، المملكة العربية السعودية.
   </p>
 
-  <!-- الهيرو (صورة واحدة فقط + زر واحد) -->
+  <!-- الهيرو (صورة واحدة فقط) -->
   <section class="hero-image">
     <a class="hero-cta"
        href="https://wa.me/966500334288"
@@ -68,54 +68,54 @@
   </section>
 
   <main class="wavy-bg">
+
+    <!-- الخدمات -->
     <section id="services" class="section">
       <h2 class="title">خدماتنا</h2>
 
-      <!-- القائمة المنسدلة تحت العنوان -->
-      <div id="service-dropdown" class="service-dropdown hidden" aria-live="polite">
-        <div class="service-dropdown__inner">
-          <h3 id="service-title" class="service-dropdown__title"></h3>
-          <div id="service-content" class="service-dropdown__content"></div>
-        </div>
+      <!-- القائمة المنسدلة -->
+      <div id="service-dropdown" class="service-dropdown hidden">
+        <h3 id="service-title"></h3>
+        <div id="service-content"></div>
       </div>
 
       <div class="cards">
-        <button class="card" type="button" data-service="litigation">
+        <button class="card" data-service="litigation">
           <i class="fa-solid fa-scale-balanced"></i>
           <span>التقاضي والترافع</span>
         </button>
 
-        <button class="card" type="button" data-service="advisory">
+        <button class="card" data-service="advisory">
           <i class="fa-solid fa-comments"></i>
           <span>الاستشارات القانونية</span>
         </button>
 
-        <button class="card" type="button" data-service="companies">
+        <button class="card" data-service="companies">
           <i class="fa-solid fa-building-columns"></i>
           <span>الشركات والخدمات التجارية</span>
         </button>
 
-        <button class="card" type="button" data-service="ip">
+        <button class="card" data-service="ip">
           <i class="fa-solid fa-lightbulb"></i>
           <span>الملكية الفكرية</span>
         </button>
 
-        <button class="card" type="button" data-service="contracts">
+        <button class="card" data-service="contracts">
           <i class="fa-solid fa-file-contract"></i>
           <span>العقود والصفقات التجارية</span>
         </button>
 
-        <button class="card" type="button" data-service="arbitration">
+        <button class="card" data-service="arbitration">
           <i class="fa-solid fa-handshake"></i>
           <span>التحكيم والوساطة</span>
         </button>
 
-        <button class="card" type="button" data-service="notary">
+        <button class="card" data-service="notary">
           <i class="fa-solid fa-stamp"></i>
           <span>التوثيق</span>
         </button>
 
-        <button class="card" type="button" data-service="training">
+        <button class="card" data-service="training">
           <i class="fa-solid fa-chalkboard-user"></i>
           <span>التدريب والتطوير</span>
         </button>
@@ -124,36 +124,29 @@
 
     <!-- التواصل -->
     <div class="contact-buttons">
-
-      <a class="contact-btn" href="https://x.com/lawyermuath?s=21&t=4JL6PS_RyA-Ks-o84pA5TA" target="_blank" rel="noopener">
-        <i class="fa-brands fa-x-twitter"></i>
-        <span>X</span>
+      <a class="contact-btn" href="https://x.com/lawyermuath" target="_blank">
+        <i class="fa-brands fa-x-twitter"></i><span>X</span>
       </a>
 
-      <a class="contact-btn" href="https://maps.app.goo.gl/7DCLF6yoGTXfVZmJ9?g_st=ipc" target="_blank" rel="noopener">
-        <i class="fa-solid fa-location-dot"></i>
-        <span>Google Maps</span>
+      <a class="contact-btn" href="https://maps.app.goo.gl/7DCLF6yoGTXfVZmJ9" target="_blank">
+        <i class="fa-solid fa-location-dot"></i><span>Google Maps</span>
       </a>
 
-      <a class="contact-btn" href="https://tiktok.com/@lawyer_ksa?_t=ZS-8z45ZOHwWs1&_r=1" target="_blank" rel="noopener">
-        <i class="fa-brands fa-tiktok"></i>
-        <span>TikTok</span>
+      <a class="contact-btn" href="https://www.tiktok.com/@lawyer_ksa" target="_blank">
+        <i class="fa-brands fa-tiktok"></i><span>TikTok</span>
       </a>
 
-      <a class="contact-btn" href="https://t.snapchat.com/1WSL6xtu" target="_blank" rel="noopener">
-        <i class="fa-brands fa-snapchat"></i>
-        <span>Snapchat</span>
+      <a class="contact-btn" href="https://t.snapchat.com/1WSL6xtu" target="_blank">
+        <i class="fa-brands fa-snapchat"></i><span>Snapchat</span>
       </a>
 
-      <a class="contact-btn" href="https://iwtsp.com/966540486184" target="_blank" rel="noopener">
-        <i class="fa-brands fa-whatsapp"></i>
-        <span>WhatsApp</span>
+      <a class="contact-btn" href="https://iwtsp.com/966540486184" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
       </a>
-
     </div>
+
   </main>
 
-  <!-- ربط الجافاسكربت -->
   <script src="script.js"></script>
 </body>
 </html>
